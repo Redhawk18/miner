@@ -14,7 +14,7 @@ use tokio::{
 };
 
 #[derive(Debug, Snafu)]
-enum Error {
+pub enum Error {
     Connect { source: io::Error },
     Read { source: io::Error },
     Write { source: io::Error },
@@ -23,8 +23,8 @@ enum Error {
     Deserialize { source: serde_json::Error },
 }
 
-trait Request<T, R> {
-    async fn request(address: &str, port: u16, request: T) -> Result<R, Error>
+pub trait Request<T, R> {
+    async fn request(address: String, port: u16, request: T) -> Result<R, Error>
     where
         T: Serialize,
         R: DeserializeOwned,

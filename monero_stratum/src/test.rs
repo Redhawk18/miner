@@ -11,7 +11,7 @@ async fn connect_to_pool() {
     pretty_env_logger::init();
 
     let login = Login::new(1, WALLET.to_string(), POOL_PASSWORD.to_string());
-    Login::request(POOL_HOSTNAME, POOL_PORT, login)
+    Login::request(POOL_HOSTNAME.to_string(), POOL_PORT, login)
         .await
         .expect("Response from pool failed");
 }

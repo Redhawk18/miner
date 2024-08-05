@@ -35,7 +35,7 @@ struct Result {
 }
 
 #[derive(Debug, Deserialize)]
-pub struct Job {
+struct Job {
     blob: String,
     height: i64,
     job_id: String,

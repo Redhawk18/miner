@@ -24,19 +24,9 @@
             dotenv.disableHint = true;
 
             languages.rust.enable = true;
-            # packages = with pkgs; [ rust-analyzer ];
+            packages = with pkgs; [ cmake gcc ];
 
             env = {
-              LD_LIBRARY_PATH = lib.makeLibraryPath (with pkgs; [
-                libGL
-                libxkbcommon
-                vulkan-loader
-                wayland
-                xorg.libXcursor
-                xorg.libXrandr
-                xorg.libXi
-                xorg.libX11
-              ]);
               RUST_LOG = "info";
             };
           };
