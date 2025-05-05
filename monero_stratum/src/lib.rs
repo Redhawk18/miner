@@ -27,7 +27,7 @@ pub trait Request<T, R> {
     async fn request(address: String, port: u16, request: T) -> Result<R, Error>
     where
         T: Serialize,
-        R: DeserializeOwned,
+        R: DeserializeOwned + Send,
     {
         trace!("Connecting to socket at {}:{}", address, port);
         let mut stream = TcpStream::connect(format!("{}:{}", address, port))

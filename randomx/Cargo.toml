@@ -1,0 +1,11 @@
+[package]
+name = "randomx"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+argon2.workspace = true
+blake2b_simd.workspace = true 
+log.workspace = true 

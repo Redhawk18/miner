@@ -35,6 +35,4 @@ async fn run() {
         .unwrap();
 
     log::info!("{:?}", response);
-
-    // loop {}
 }

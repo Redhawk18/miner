@@ -24,7 +24,7 @@
             dotenv.disableHint = true;
 
             languages.rust.enable = true;
-            packages = with pkgs; [ cmake gcc ];
+            # packages = with pkgs; [ ];
 
             env = {
               RUST_LOG = "info";

@@ -7,14 +7,14 @@ license.workspace = true
 
 [dependencies]
 monero_stratum.workspace = true
+randomx.workspace = true
 
 log.workspace = true
 pretty_env_logger.workspace = true
-rust-randomx.workspace = true
 tokio.workspace = true
 
 [workspace]
-members = [ "monero_stratum" ]
+members = [ "monero_stratum" , "randomx"]
 
 [workspace.package]
 version = "0.1.0"
@@ -24,13 +24,14 @@ license = "MPL-2.0"
 
 [workspace.dependencies]
 monero_stratum = { path = "monero_stratum" }
+randomx = { path = "randomx" }
 
+argon2 = "0.5"
+blake2b_simd = "1.0"
 log = "0.4"
-pretty_env_logger = "0.5.0"
-rust-randomx = "0.7"
+pretty_env_logger = "0.5"
 serde = { version = "1", features = [ "derive" ] }
 serde_json = "1"
 snafu = "0.8"
 tokio = { version = "1", features = [ "io-util", "net", "macros", "rt-multi-thread" ] }
-
 
